@@ -17,6 +17,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        // primary: '#007bff',  // Bootstrap's default primary blue
+        // secondary: '#0056b3', // A darker shade of primary blue
+        // tertiary: '#6c757d',  // Bootstrap's default gray, adjusted for tertiary use in a blue theme
+        // border: '#1a2e35',
+        // background: '#ffffff',
         primary: '#ec4755',
         secondary: '#a12c34',
         tertiary: '#99a0a3',

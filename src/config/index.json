@@ -27,13 +27,13 @@
     "href": "#"
   },
   "mainHero": {
-    "title": "Use me as your",
-    "subtitle": "landing page.",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "title": "Shape Your Engineering Career",
+    "subtitle": "Connecting You to Swiss Industry Leaders",
+    "description": "Discover tailored opportunities with our specialized matching platform. Perfect for Swiss engineering students seeking to launch or advance their careers.",
     "img": "/assets/images/happyTeam.jpeg",
     "primaryAction": {
-      "text": "Get started",
-      "href": "#"
+      "text": "Join Now",
+      "href": "#register"
     },
     "secondaryAction": {
       "text": "Email us",
@@ -41,47 +41,48 @@
     }
   },
   "product": {
-    "title": "React landing page 2021",
+    "title": "Why choose us?",
     "items": [
       {
-        "title": "A plug n play template",
-        "description": "Just edit the config.json file with details about your company and voila your beautiful state of the art landing page is ready to go live! Remember to also update your assets, add any images you want to show to /assets/images and link them in the config.json",
+        "title": "Precision Matching Algorithm",
+        "description": "Our proprietary algorithm tailors to the unique demands of the Swiss engineering sector, ensuring an unmatched precision in connecting engineering students with leading industrial companies. Experience how our technology makes a difference in your career trajectory.",
         "img": "/assets/images/product1.jpg"
       },
       {
-        "title": "Make it your own!",
-        "description": "Play around with the theme.ts file and configure the color palette to match the branding of your company! If you're feeling wild, maybe change some tailwind css as well!",
+        "title": "Unrivaled Industry Network",
+        "description": "Leverage our extensive network of industrial leaders to find your perfect engineering opportunity. Our platform provides exclusive access to internships and job openings not available anywhere else, specifically focused on the Swiss market.",
         "img": "/assets/images/product2.jpg"
       }
     ]
   },
   "features": {
-    "title": "Latest & greatest ",
-    "subtitle": "All the best technologies out there!",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "title": "Engineering Your Future",
+    "subtitle": "Exclusive Features Designed for Precision and Efficiency",
+    "description": "Our platform integrates cutting-edge technologies and bespoke features to streamline the process of matching engineering talent with leading companies. Discover how we enhance your job search and hiring experience.",
     "items": [
       {
-        "name": "React.js",
-        "description": "React is a free and open-source front-end JavaScript library for building user interfaces or UI components.",
-        "icon": "/assets/images/react.png"
+        "name": "Custom Matchmaking",
+        "description": "Utilize our state-of-the-art algorithm that analyzes your skills, preferences, and career aspirations to match you with the ideal engineering roles at Swiss industrial companies.",
+        "icon": "/assets/images/custom-matchmaking.png"
       },
       {
-        "name": "Tailwind",
-        "description": "Tailwind CSS is a highly customizable, low-level CSS framework for quickly creating beautiful designs without any annoying opinionated stylesheet nonsense.",
-        "icon": "/assets/images/tailwindcss.svg"
+        "name": "Real-Time Job Alerts",
+        "description": "Receive instant notifications about new job opportunities directly to your device, ensuring you never miss out on prospective positions that fit your profile.",
+        "icon": "/assets/images/real-time-alerts.svg"
       },
       {
-        "name": "Next.js",
-        "description": "Next.js is a framework for server-rendered React applications using Next.js.",
-        "icon": "/assets/images/nextjs.svg"
+        "name": "Interactive Portfolio Builder",
+        "description": "Showcase your engineering projects and accomplishments using our interactive tools that help you create a professional and appealing portfolio, appealing directly to industry leaders.",
+        "icon": "/assets/images/portfolio-builder.svg"
       },
       {
-        "name": "Typescript",
-        "description": "TypeScript is a programming language developed and maintained by Microsoft.",
-        "icon": "/assets/images/ts.png"
+        "name": "In-Depth Analytics",
+        "description": "Gain insights into your application status, industry demand, and more with our comprehensive analytics dashboard that helps you make informed career decisions.",
+        "icon": "/assets/images/analytics.svg"
       }
     ]
   },
+
   "pricing": {
     "title": "Pricing",
     "items": [
