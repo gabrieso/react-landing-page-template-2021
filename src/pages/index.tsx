@@ -1,14 +1,19 @@
 import React from 'react';
 
+import Analytics from '../components/Analytics';
 import Canvas from '../components/Canvas';
+import CVUploadForm from '../components/CVUploadform';
 import Features from '../components/Features';
 import Header from '../components/Header';
 import LazyShow from '../components/LazyShow';
 import MainHero from '../components/MainHero';
 import MainHeroImage from '../components/MainHeroImage';
+import Pricing from '../components/Pricing';
 import Product from '../components/Product';
 
 const App = () => {
+  const TRACKING_ID = 'G-XXXXXXXXX';
+
   return (
     <div className={`bg-background grid gap-y-16 overflow-hidden`}>
       <div className={`relative bg-background`}>
@@ -35,6 +40,17 @@ const App = () => {
           <Canvas />
         </>
       </LazyShow>
+      <LazyShow>
+        <Pricing />
+      </LazyShow>
+      <CVUploadForm />
+      <LazyShow>
+        <>
+          <Canvas />
+        </>
+      </LazyShow>
+
+      <Analytics />
     </div>
   );
 };

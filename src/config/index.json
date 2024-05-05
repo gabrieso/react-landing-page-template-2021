@@ -15,11 +15,11 @@
 
     {
       "name": "Pricing",
-      "href": "pricing"
+      "href": "Pricing"
     },
     {
-      "name": "About",
-      "href": "about"
+      "name": "Join Now",
+      "href": "CVUploadForm"
     }
   ],
   "callToAction": {
@@ -36,10 +36,11 @@
       "href": "#register"
     },
     "secondaryAction": {
-      "text": "Email us",
-      "href": "mailto:issaafakattan@gmail.com?subject=I like react landing page!"
+      "text": "Find out more",
+      "href": "pricing"
     }
   },
+
   "product": {
     "title": "Why choose us?",
     "items": [
@@ -82,7 +83,6 @@
       }
     ]
   },
-
   "pricing": {
     "title": "Pricing",
     "items": [
@@ -119,6 +119,38 @@
           "100 GB of storage",
           "Phone and Email support"
         ]
+      }
+    ]
+  },  
+  "pricing_2": {
+    "title": "Scholarship Bundle Comparison",
+    "items": [
+      {
+        "name": "Bundle A (Entry-Level)",
+        "financialSupport": "Tuition Discount",
+        "commitmentPeriod": "1 year",
+        "professionalOpportunities": ["Working Student Position"],
+        "academicOpportunities": ["Workshops"],
+        "additionalIncentives": ["Academic Excellence Bonus"],
+        "details": "This entry-level bundle is perfect for new students looking to gain initial support with minimal commitment. Ideal for those starting their academic journey."
+      },
+      {
+        "name": "Bundle B (Mid-Level)",
+        "financialSupport": "Full Tuition",
+        "commitmentPeriod": "2 years",
+        "professionalOpportunities": ["Internship", "Working Student Position"],
+        "academicOpportunities": ["Master’s Thesis Collaboration"],
+        "additionalIncentives": ["Academic Excellence Bonus", "Extracurricular Projects matching your interest", "Global Student Exchange"],
+        "details": "Our mid-level bundle is designed for students who are ready to deepen their academic and professional experience with a moderate commitment."
+      },
+      {
+        "name": "Bundle C (High-Level)",
+        "financialSupport": "Full Tuition + Half Living",
+        "commitmentPeriod": "3 years",
+        "professionalOpportunities": ["Working Student Position"],
+        "academicOpportunities": ["Leadership Training"],
+        "additionalIncentives": ["Academic Excellence Bonus", "Global Student Exchange"],
+        "details": "The high-level bundle provides the most comprehensive support, targeting students who are committed to full-time academic and professional growth."
       }
     ]
   },

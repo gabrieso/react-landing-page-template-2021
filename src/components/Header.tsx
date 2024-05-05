@@ -58,12 +58,12 @@ const Menu = () => {
                   {item.name}
                 </Link>
               ))}
-              <a
-                href="#"
+              {/* <a
+                href="CVUploadForm"
                 className={`font-medium text-primary hover:text-secondary`}
               >
-                Call to action
-              </a>
+                Join Now
+              </a> */}
             </div>
           </nav>
         </div>

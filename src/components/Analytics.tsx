@@ -7,6 +7,9 @@ import { GA_ADS_ID } from '../lib/googleAds';
 import * as gtag from '../lib/gtag';
 
 const App = () => {
+  // ReactGA.initialize(gtag.GA_TRACKING_ID);
+  // ReactGA.pageview(window.location.pathname + window.location.search);
+
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url: string) => {
