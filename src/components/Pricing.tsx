@@ -128,7 +128,6 @@
 import React from 'react';
 
 import ReactGA from 'react-ga4';
-import { Link } from 'react-scroll';
 
 import config from '../config/index.json';
 

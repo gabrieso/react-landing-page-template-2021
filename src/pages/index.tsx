@@ -7,6 +7,7 @@ import Canvas from '../components/Canvas';
 import CVUploadForm from '../components/CVUploadform';
 import Features from '../components/Features';
 import Header from '../components/Header';
+import Hotjar from '../components/Hotjar';
 import LazyShow from '../components/LazyShow';
 import MainHero from '../components/MainHero';
 import MainHeroImage from '../components/MainHeroImage';
@@ -58,7 +59,7 @@ const App = () => {
           <Canvas />
         </>
       </LazyShow>
-
+      <Hotjar hotjarId="4969754" hotjarVersion="6" />
       <Analytics />
     </div>
   );
