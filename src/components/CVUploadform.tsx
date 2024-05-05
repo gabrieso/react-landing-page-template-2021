@@ -7,7 +7,7 @@ import { storage, db } from '../firebaseConfig';
 
 function CVUploadForm() {
   const [email, setEmail] = useState('');
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
 
   const handleEmailChange = (event) => setEmail(event.target.value);
   const handleFileChange = (event) => setFile(event.target.files[0]);
@@ -25,6 +25,7 @@ function CVUploadForm() {
       // Upload the file to Firebase Storage
       const uploadResult = await uploadBytes(fileRef, file);
       console.log('File uploaded successfully', uploadResult);
+
 
       // Add the email and file reference to Firestore
       const docRef = await addDoc(collection(db, 'submissions'), {
