@@ -9,8 +9,6 @@
       }
     ]
   },
-  "extends": ["next", "next/core-web-vitals"],
-  
   "overrides": [
     // Configuration for TypeScript files
     {
