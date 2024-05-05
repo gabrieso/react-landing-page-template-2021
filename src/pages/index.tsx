@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ReactGA from 'react-ga4';
+
 import Analytics from '../components/Analytics';
 import Canvas from '../components/Canvas';
 import CVUploadForm from '../components/CVUploadform';
@@ -11,7 +13,16 @@ import MainHeroImage from '../components/MainHeroImage';
 import Pricing from '../components/Pricing';
 import Product from '../components/Product';
 
+const TRACKING_ID = 'G-KRGGQ3ZDBR';
+
 const App = () => {
+  ReactGA.initialize(TRACKING_ID);
+  // Send pageview with a custom path
+  ReactGA.send({
+    hitType: 'pageview',
+    page: '/landingpage',
+    title: 'Landing Page',
+  });
   return (
     <div className={`bg-background grid gap-y-16 overflow-hidden`}>
       <div className={`relative bg-background`}>

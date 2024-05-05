@@ -1,17 +1,46 @@
 import React, { useState } from 'react';
 
 import { collection, addDoc } from 'firebase/firestore';
-import { ref, uploadBytes } from 'firebase/storage';
+import { ref, uploadBytes, uploadString } from 'firebase/storage';
 
 import { storage, db } from '../firebaseConfig';
 
 function CVUploadForm() {
   const [email, setEmail] = useState('');
   const [file, setFile] = useState<File | null>(null);
+  const handleEmailChange = (event) => setEmail(event.target.value);
+  const handleFileChange = (event) => setFile(event.target.files[0]);
 
-  // const handleEmailChange = (event) => setEmail(event.target.value);
-  // const handleFileChange = (event) => setFile(event.target.files[0]);
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   if (!file || !email) {
+  //     alert('Please enter your email and select a file to upload.');
+  //     return;
+  //   }
 
+  //   const fileRef = ref(storage, `cvs/${file.name}`);
+  //   const emailRef = ref(storage, `emails/${email}`);
+  //   try {
+  //     // Upload the file to Firebase Storage
+  //     const uploadResult = await uploadBytes(fileRef, file);
+  //     console.log('File uploaded successfully', uploadResult);
+
+  //     // Add the email and file reference to Firestore
+  //     const docRef = await addDoc(collection(db, 'submissions'), {
+  //       email,
+  //       fileName: file.name,
+  //       filePath: uploadResult.metadata.fullPath,
+  //     });
+  //     console.log('Document written with ID: ', docRef.id);
+
+  //     setEmail('');
+  //     setFile(null);
+  //     alert('Your CV has been submitted successfully!');
+  //   } catch (error) {
+  //     console.error('Error adding document: ', error);
+  //     alert('Error submitting your CV.');
+  //   }
+  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!file || !email) {
@@ -19,27 +48,38 @@ function CVUploadForm() {
       return;
     }
 
+    // References to storage locations
     const fileRef = ref(storage, `cvs/${file.name}`);
-    const emailRef = ref(storage, `emails/${email}`);
+    const emailRef = ref(
+      storage,
+      `emails/${email.replace(/[^a-zA-Z0-9]/g, '_')}.txt`
+    ); // Create a safe filename from email
+
     try {
       // Upload the file to Firebase Storage
-      const uploadResult = await uploadBytes(fileRef, file);
-      console.log('File uploaded successfully', uploadResult);
+      const uploadFileResult = await uploadBytes(fileRef, file);
+      console.log('File uploaded successfully', uploadFileResult);
 
+      // Convert email string to Blob and upload as .txt file
+      const emailBlob = new Blob([email], { type: 'text/plain' });
+      const uploadEmailResult = await uploadBytes(emailRef, emailBlob);
+      console.log('Email uploaded successfully', uploadEmailResult);
+      alert('Your CV and email have been submitted successfully!');
       // Add the email and file reference to Firestore
       const docRef = await addDoc(collection(db, 'submissions'), {
         email,
         fileName: file.name,
-        filePath: uploadResult.metadata.fullPath,
+        filePath: uploadFileResult.metadata.fullPath,
+        emailPath: uploadEmailResult.metadata.fullPath,
       });
       console.log('Document written with ID: ', docRef.id);
 
       setEmail('');
       setFile(null);
-      alert('Your CV has been submitted successfully!');
+      alert('Your CV and email have been submitted successfully!');
     } catch (error) {
       console.error('Error adding document: ', error);
-      alert('Error submitting your CV.');
+      alert('Error submitting your CV and email.');
     }
   };
 
@@ -73,6 +113,7 @@ function CVUploadForm() {
             Upload CV:
             <input
               type="file"
+              onChange={handleFileChange} // Add this line
               required
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 cursor-pointer focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             />
