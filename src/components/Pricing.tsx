@@ -130,8 +130,8 @@ import React from 'react';
 import config from '../config/index.json';
 
 const Pricing = () => {
-  const { pricing_2 } = config;
-  const { items, title } = pricing_2;
+  const { packages } = config;
+  const { items, title } = packages;
   const [firstPlan, secondPlan, thirdPlan] = items;
 
   // const trackButtonClick = () => {
@@ -141,6 +141,9 @@ const Pricing = () => {
   //       label: 'Apply Now'
   //   });
   // }
+  if (!firstPlan || !secondPlan || !thirdPlan) {
+    return <div>Loading plans...</div>;
+  }
 
   return (
     <div

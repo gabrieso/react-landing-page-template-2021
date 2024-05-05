@@ -121,8 +121,8 @@
         ]
       }
     ]
-  },  
-  "pricing_2": {
+  },
+  "packages": {
     "title": "Scholarship Bundle Comparison",
     "items": [
       {
@@ -140,7 +140,11 @@
         "commitmentPeriod": "2 years",
         "professionalOpportunities": ["Internship", "Working Student Position"],
         "academicOpportunities": ["Master’s Thesis Collaboration"],
-        "additionalIncentives": ["Academic Excellence Bonus", "Extracurricular Projects matching your interest", "Global Student Exchange"],
+        "additionalIncentives": [
+          "Academic Excellence Bonus",
+          "Extracurricular Projects matching your interest",
+          "Global Student Exchange"
+        ],
         "details": "Our mid-level bundle is designed for students who are ready to deepen their academic and professional experience with a moderate commitment."
       },
       {
@@ -149,7 +153,10 @@
         "commitmentPeriod": "3 years",
         "professionalOpportunities": ["Working Student Position"],
         "academicOpportunities": ["Leadership Training"],
-        "additionalIncentives": ["Academic Excellence Bonus", "Global Student Exchange"],
+        "additionalIncentives": [
+          "Academic Excellence Bonus",
+          "Global Student Exchange"
+        ],
         "details": "The high-level bundle provides the most comprehensive support, targeting students who are committed to full-time academic and professional growth."
       }
     ]

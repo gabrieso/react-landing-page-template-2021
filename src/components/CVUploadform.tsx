@@ -9,8 +9,8 @@ function CVUploadForm() {
   const [email, setEmail] = useState('');
   const [file, setFile] = useState<File | null>(null);
 
-  const handleEmailChange = (event) => setEmail(event.target.value);
-  const handleFileChange = (event) => setFile(event.target.files[0]);
+  // const handleEmailChange = (event) => setEmail(event.target.value);
+  // const handleFileChange = (event) => setFile(event.target.files[0]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,7 +25,6 @@ function CVUploadForm() {
       // Upload the file to Firebase Storage
       const uploadResult = await uploadBytes(fileRef, file);
       console.log('File uploaded successfully', uploadResult);
-
 
       // Add the email and file reference to Firestore
       const docRef = await addDoc(collection(db, 'submissions'), {
@@ -88,3 +87,66 @@ function CVUploadForm() {
 }
 
 export default CVUploadForm;
+
+// import React, { useState } from 'react';
+// import { collection, addDoc } from 'firebase/firestore';
+// import { ref, uploadBytes } from 'firebase/storage';
+// import { storage, db } from '../firebaseConfig';
+
+// function CVUploadForm() {
+//   const [email, setEmail] = useState('');
+//   const [file, setFile] = useState<File | null>(null);
+
+//   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value);
+//   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+//     if (event.target.files && event.target.files[0]) {
+//       setFile(event.target.files[0]);
+//     }
+//   };
+
+//   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+//     event.preventDefault();
+//     setMessage('');
+//     if (!file || !email) {
+//       setMessage('Please enter your email and select a file to upload.');
+//       return;
+//     }
+
+//     const fileRef = ref(storage, `cvs/${file.name}`);
+//     try {
+//       const uploadResult = await uploadBytes(fileRef, file);
+//       console.log('File uploaded successfully', uploadResult);
+
+//       // Add the email and file reference to Firestore
+//       const docRef = await addDoc(collection(db, 'submissions'), {
+//         email,
+//         fileName: file.name,
+//         filePath: uploadResult.metadata.fullPath,
+//       });
+//       setEmail('');
+//       setFile(null);
+//       setMessage('Your CV has been submitted successfully!');
+//     } catch (error) {
+//       console.error('Error adding document: ', error);
+//       setMessage('Error submitting your CV.');
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <label>
+//           Email:
+//           <input type="email" value={email} onChange={handleEmailChange} required />
+//         </label>
+//         <label>
+//           Upload file:
+//           <input type="file" onChange={handleFileChange} required />
+//         </label>
+//         <button type="submit">Submit CV</button>
+//       </form>
+//     </div>
+//   );
+// }
+
+// export default CVUploadForm;
