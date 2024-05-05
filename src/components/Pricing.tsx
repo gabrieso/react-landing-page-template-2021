@@ -127,6 +127,7 @@
 
 import React from 'react';
 
+import ReactGA from 'react-ga4';
 import { Link } from 'react-scroll';
 
 import config from '../config/index.json';
@@ -136,13 +137,14 @@ const Pricing = () => {
   const { items, title } = packages;
   const [firstPlan, secondPlan, thirdPlan] = items;
 
-  // const trackButtonClick = () => {
-  //   ReactGA.event({
-  //       category: 'Button',
-  //       action: 'Click',
-  //       label: 'Apply Now'
-  //   });
-  // }
+  const handleClick = (platform) => {
+    ReactGA.event({
+      category: 'Social Links',
+      action: 'Click',
+      label: platform,
+    });
+  };
+
   if (!firstPlan || !secondPlan || !thirdPlan) {
     return <div>Loading plans...</div>;
   }
@@ -217,6 +219,7 @@ const Pricing = () => {
             <a
               href="#cvUploadForm"
               className="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300 ease-in-out"
+              onClick={() => handleClick('Apply Now')}
             >
               Apply Now
             </a>
