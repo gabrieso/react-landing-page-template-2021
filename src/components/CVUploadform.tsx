@@ -44,7 +44,10 @@ function CVUploadForm() {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-8 bg-white shadow rounded-lg">
+    <div
+      className="max-w-lg mx-auto p-8 bg-white shadow rounded-lg"
+      id="cvUploadForm"
+    >
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Submit Your CV</h2>
       <p className="mb-4 text-gray-700">
         Upload your CV and provide your email address below. We will use

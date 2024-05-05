@@ -127,6 +127,8 @@
 
 import React from 'react';
 
+import { Link } from 'react-scroll';
+
 import config from '../config/index.json';
 
 const Pricing = () => {
@@ -212,9 +214,12 @@ const Pricing = () => {
               {plan.name} Details
             </h3>
             <p className="text-gray-600 mt-2">{plan.details}</p>
-            <button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <a
+              href="#cvUploadForm"
+              className="inline-block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300 ease-in-out"
+            >
               Apply Now
-            </button>
+            </a>
           </div>
         ))}
       </div>
