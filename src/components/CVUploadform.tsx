@@ -85,43 +85,52 @@ function CVUploadForm() {
 
   return (
     <div
-      className="max-w-lg mx-auto p-8 bg-white shadow rounded-lg"
+      className="max-w-lg mx-auto my-16 p-8 bg-background shadow-2xl rounded-lg border border-border transition-shadow duration-300 ease-in-out hover:shadow-3xl"
       id="cvUploadForm"
     >
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">Submit Your CV</h2>
-      <p className="mb-4 text-gray-700">
+      <h2 className="text-3xl font-bold text-center text-primary mb-8">
+        Submit Your CV
+      </h2>
+      <p className="mb-6 text-tertiary text-center">
         Upload your CV and provide your email address below. We will use
         advanced algorithms to analyze your qualifications and match you with
-        industry-leading opportunities. This process helps tailor job placements
-        that align with your skills and career aspirations.
+        industry-leading opportunities.
       </p>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-8">
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Email:
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            />
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-secondary mb-2"
+          >
+            Email
           </label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleEmailChange}
+            required
+            className="w-full px-4 py-2 border border-tertiary rounded-md shadow-sm placeholder-tertiary focus:outline-none focus:ring-primary focus:border-primary transition duration-300"
+          />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Upload CV:
-            <input
-              type="file"
-              onChange={handleFileChange} // Add this line
-              required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-gray-900 cursor-pointer focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            />
+          <label
+            htmlFor="cv"
+            className="block text-sm font-medium text-secondary mb-2"
+          >
+            Upload CV
           </label>
+          <input
+            type="file"
+            id="cv"
+            onChange={handleFileChange}
+            required
+            className="w-full px-4 py-2 border border-tertiary rounded-md shadow-sm text-gray-900 cursor-pointer focus:outline-none focus:ring-primary focus:border-primary transition duration-300"
+          />
         </div>
         <button
           type="submit"
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="w-full py-2 px-4 bg-primary hover:bg-secondary text-white font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300"
         >
           Submit
         </button>
