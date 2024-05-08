@@ -28,9 +28,9 @@
   },
   "mainHero": {
     "title": "Shape Your Engineering Career",
-    "subtitle": "Connecting You to Swiss Industry Leaders",
-    "description": "Discover tailored opportunities with our specialized matching platform. Perfect for Swiss engineering students seeking to launch or advance their careers.",
-    "img": "/assets/images/happyTeam.jpeg",
+    "subtitle": "Connect with a matching Swiss industry leader!",
+    "description": "STEM-Students seeking to launch their professional careers, gain practical experience or secure a early job-entry..",
+    "img": "/assets/images/HeaderImage.jpg",
     "primaryAction": {
       "text": "Join Now",
       "href": "#register"
@@ -45,41 +45,56 @@
     "title": "Why choose us?",
     "items": [
       {
-        "title": "Precision Matching Algorithm",
-        "description": "Our proprietary algorithm tailors to the unique demands of the Swiss engineering sector, ensuring an unmatched precision in connecting engineering students with leading industrial companies. Experience how our technology makes a difference in your career trajectory.",
+        "title": "Customize Your Extracurricular Education",
+        "description": "Design your educational journey! Address your needs—whether it's overcoming financial challenges, engaging in innovative projects, exploring exchange opportunities, or focusing on your thesis.",
         "img": "/assets/images/product1.jpg"
       },
       {
-        "title": "Unrivaled Industry Network",
-        "description": "Leverage our extensive network of industrial leaders to find your perfect engineering opportunity. Our platform provides exclusive access to internships and job openings not available anywhere else, specifically focused on the Swiss market.",
+        "title": "Bridge Theory with Practice",
+        "description": "Enhance your theoretical knowledge with hands-on practical experiences. Dive into projects that reflect your academic interests and provide real-world applications, or collaborate on innovative endeavors that push the boundaries of your field.",
         "img": "/assets/images/product2.jpg"
+      },
+      {
+        "title": "Fund Your Studies and Secure Your Future",
+        "description": "Access stipends to support your educational journey and take proactive steps to secure your future job. Join a program that not only invests in your studies but also connects you with career opportunities.",
+        "img": "/assets/images/product1.jpg"
+      },
+      {
+        "title": "Close the Gap: From Classroom to Career",
+        "description": "Transform your academic knowledge into practical expertise. Engage in hands-on projects and real-world challenges that prepare you for professional success and close the skills gap. Embrace Lifelong Learning",
+        "img": "/assets/images/product2.jpg"
+      },
+      {
+        "title": "Skip the endless job ads: Match Your Career to Your Passions",
+        "description": "Skip the endless job ads. Connect directly with companies that align with your personal interests and values. Our tailored approach connects you with industry leaders who share your interests and values, ensuring a mutually beneficial partnership.",
+        "img": "/assets/images/product1.jpg"
       }
     ]
   },
   "features": {
-    "title": "Engineering Your Future",
+    "title": "Build Your Future",
     "subtitle": "Exclusive Features Designed for Precision and Efficiency",
     "description": "Our platform integrates cutting-edge technologies and bespoke features to streamline the process of matching engineering talent with leading companies. Discover how we enhance your job search and hiring experience.",
     "items": [
       {
         "name": "Custom Matchmaking",
         "description": "Utilize our state-of-the-art algorithm that analyzes your skills, preferences, and career aspirations to match you with the ideal engineering roles at Swiss industrial companies.",
-        "icon": "/assets/images/custom-matchmaking.png"
+        "icon": "/assets/images/heart.png"
       },
       {
         "name": "Real-Time Job Alerts",
         "description": "Receive instant notifications about new job opportunities directly to your device, ensuring you never miss out on prospective positions that fit your profile.",
-        "icon": "/assets/images/real-time-alerts.svg"
+        "icon": "/assets/images/job-loss.png"
       },
       {
         "name": "Interactive Portfolio Builder",
         "description": "Showcase your engineering projects and accomplishments using our interactive tools that help you create a professional and appealing portfolio, appealing directly to industry leaders.",
-        "icon": "/assets/images/portfolio-builder.svg"
+        "icon": "/assets/images/professional-portfolio.png"
       },
       {
         "name": "In-Depth Analytics",
         "description": "Gain insights into your application status, industry demand, and more with our comprehensive analytics dashboard that helps you make informed career decisions.",
-        "icon": "/assets/images/analytics.svg"
+        "icon": "/assets/images/analytics.png"
       }
     ]
   },
