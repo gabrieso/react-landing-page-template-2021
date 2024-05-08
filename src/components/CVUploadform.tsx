@@ -11,36 +11,6 @@ function CVUploadForm() {
   const handleEmailChange = (event) => setEmail(event.target.value);
   const handleFileChange = (event) => setFile(event.target.files[0]);
 
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   if (!file || !email) {
-  //     alert('Please enter your email and select a file to upload.');
-  //     return;
-  //   }
-
-  //   const fileRef = ref(storage, `cvs/${file.name}`);
-  //   const emailRef = ref(storage, `emails/${email}`);
-  //   try {
-  //     // Upload the file to Firebase Storage
-  //     const uploadResult = await uploadBytes(fileRef, file);
-  //     console.log('File uploaded successfully', uploadResult);
-
-  //     // Add the email and file reference to Firestore
-  //     const docRef = await addDoc(collection(db, 'submissions'), {
-  //       email,
-  //       fileName: file.name,
-  //       filePath: uploadResult.metadata.fullPath,
-  //     });
-  //     console.log('Document written with ID: ', docRef.id);
-
-  //     setEmail('');
-  //     setFile(null);
-  //     alert('Your CV has been submitted successfully!');
-  //   } catch (error) {
-  //     console.error('Error adding document: ', error);
-  //     alert('Error submitting your CV.');
-  //   }
-  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!file || !email) {
@@ -85,7 +55,7 @@ function CVUploadForm() {
 
   return (
     <div
-      className="max-w-lg mx-auto my-16 p-8 bg-background shadow-2xl rounded-lg border border-border transition-shadow duration-300 ease-in-out hover:shadow-3xl"
+      className="max-w-2xl mx-auto my-16 p-8 bg-background shadow-2xl rounded-lg border border-border transition-shadow duration-300 ease-in-out hover:shadow-3xl"
       id="cvUploadForm"
     >
       <h2 className="text-3xl font-bold text-center text-primary mb-8">

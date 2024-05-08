@@ -255,7 +255,7 @@ const Pricing = () => {
 
   return (
     <div
-      className="max-w-6xl mx-auto my-16 p-8 bg-background shadow-2xl rounded-lg border border-border transition-shadow duration-300 ease-in-out hover:shadow-3xl"
+      className="max-w-6xl mx-auto my-16 p-8 bg-white shadow-2xl rounded-lg border border-border transition-shadow duration-300 ease-in-out hover:shadow-3xl"
       id="Pricing"
     >
       <h1 className="text-4xl font-bold text-center text-primary my-8">
@@ -265,7 +265,7 @@ const Pricing = () => {
       <div className="overflow-x-auto">
         <table className="w-full table-auto">
           <thead>
-            <tr className="bg-tertiary text-left">
+            <tr className="bg-white  text-left">
               <th className="py-4 px-6 text-sm font-semibold text-secondary uppercase">
                 Attributes / Bundles
               </th>
@@ -347,7 +347,7 @@ const Pricing = () => {
         {items.map((plan, index) => (
           <div
             key={index}
-            className="bg-background p-6 rounded-lg shadow-lg border border-tertiary hover:shadow-2xl transition-shadow duration-300 ease-in-out"
+            className="bg-white p-6 rounded-lg shadow-lg border border-tertiary hover:shadow-2xl transition-shadow duration-300 ease-in-out"
           >
             <h3 className="font-semibold text-2xl text-secondary">
               {plan.name} Details
