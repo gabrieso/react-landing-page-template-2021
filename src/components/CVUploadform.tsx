@@ -8,11 +8,15 @@ import { storage, db } from '../firebaseConfig';
 function CVUploadForm() {
   const [email, setEmail] = useState('');
   const [file, setFile] = useState<File | null>(null);
+  const [consent, setConsent] = useState(false);
+
   const handleEmailChange = (event) => setEmail(event.target.value);
   const handleFileChange = (event) => setFile(event.target.files[0]);
+  const handleConsentChange = (event) => setConsent(event.target.checked);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (!file || !email) {
       alert('Please enter your email and select a file to upload.');
       return;
@@ -98,6 +102,22 @@ function CVUploadForm() {
             className="w-full px-4 py-2 border border-tertiary rounded-md shadow-sm text-gray-900 cursor-pointer focus:outline-none focus:ring-primary focus:border-primary transition duration-300"
           />
         </div>
+        <div>
+          <input
+            type="checkbox"
+            id="consent"
+            checked={consent}
+            onChange={handleConsentChange}
+            className="mr-2"
+          />
+          <label
+            htmlFor="consent"
+            className="text-sm font-medium text-secondary"
+          >
+            I&apos;m willing to give my CV for analysis. This will only be
+            shared with potential matching companies.
+          </label>
+        </div>
         <button
           type="submit"
           className="w-full py-2 px-4 bg-primary hover:bg-secondary text-white font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300"
@@ -110,66 +130,3 @@ function CVUploadForm() {
 }
 
 export default CVUploadForm;
-
-// import React, { useState } from 'react';
-// import { collection, addDoc } from 'firebase/firestore';
-// import { ref, uploadBytes } from 'firebase/storage';
-// import { storage, db } from '../firebaseConfig';
-
-// function CVUploadForm() {
-//   const [email, setEmail] = useState('');
-//   const [file, setFile] = useState<File | null>(null);
-
-//   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value);
-//   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-//     if (event.target.files && event.target.files[0]) {
-//       setFile(event.target.files[0]);
-//     }
-//   };
-
-//   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-//     event.preventDefault();
-//     setMessage('');
-//     if (!file || !email) {
-//       setMessage('Please enter your email and select a file to upload.');
-//       return;
-//     }
-
-//     const fileRef = ref(storage, `cvs/${file.name}`);
-//     try {
-//       const uploadResult = await uploadBytes(fileRef, file);
-//       console.log('File uploaded successfully', uploadResult);
-
-//       // Add the email and file reference to Firestore
-//       const docRef = await addDoc(collection(db, 'submissions'), {
-//         email,
-//         fileName: file.name,
-//         filePath: uploadResult.metadata.fullPath,
-//       });
-//       setEmail('');
-//       setFile(null);
-//       setMessage('Your CV has been submitted successfully!');
-//     } catch (error) {
-//       console.error('Error adding document: ', error);
-//       setMessage('Error submitting your CV.');
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <form onSubmit={handleSubmit}>
-//         <label>
-//           Email:
-//           <input type="email" value={email} onChange={handleEmailChange} required />
-//         </label>
-//         <label>
-//           Upload file:
-//           <input type="file" onChange={handleFileChange} required />
-//         </label>
-//         <button type="submit">Submit CV</button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default CVUploadForm;

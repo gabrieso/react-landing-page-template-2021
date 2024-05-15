@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 
 const HotjarTracking = ({ hotjarId, hotjarVersion }) => (
   <Helmet>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <script>
       {`(function(h,o,t,j,a,r){
                     h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};

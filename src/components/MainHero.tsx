@@ -44,5 +44,4 @@ const MainHero = () => {
     </main>
   );
 };
-
 export default MainHero;
