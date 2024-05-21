@@ -162,9 +162,10 @@ function CVUploadForm() {
             className="w-full px-4 py-2 border border-tertiary rounded-md shadow-sm placeholder-tertiary focus:outline-none focus:ring-primary focus:border-primary transition duration-300"
           >
             <option value="">Select a bundle</option>
-            <option value="1">Bundle 1</option>
-            <option value="2">Bundle 2</option>
-            <option value="3">Bundle 3</option>
+            <option value="1">Foundation Pathaway</option>
+            <option value="2">Enhancement Track</option>
+            <option value="3">Pinnacle Program</option>
+            <option value="4">Customized Bundle</option>
           </select>
         </div>
         <div>
