@@ -6,6 +6,7 @@ import Analytics from '../components/Analytics';
 import Canvas from '../components/Canvas';
 import CVUploadForm from '../components/CVUploadform';
 import Features from '../components/Features';
+import GoogleForm from '../components/GoogleForm';
 import Header from '../components/Header';
 import Hotjar from '../components/Hotjar';
 import LazyShow from '../components/LazyShow';
@@ -53,6 +54,7 @@ const App = () => {
       <LazyShow>
         <Pricing />
       </LazyShow>
+      <GoogleForm />
       <CVUploadForm />
       <LazyShow>
         <>
