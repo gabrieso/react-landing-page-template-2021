@@ -38,7 +38,6 @@ const App = () => {
           </div>
         </div>
       </div>
-      <Canvas />
       <LazyShow>
         <>
           <Product />

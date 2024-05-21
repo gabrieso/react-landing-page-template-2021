@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { collection, addDoc } from 'firebase/firestore';
-import { ref, uploadBytes, uploadString } from 'firebase/storage';
+import { ref, uploadBytes } from 'firebase/storage';
 
 import { storage, db } from '../firebaseConfig';
 
@@ -9,24 +9,31 @@ function CVUploadForm() {
   const [email, setEmail] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [consent, setConsent] = useState(false);
+  const [interests, setInterests] = useState('');
+  const [bundle, setBundle] = useState('');
+  const [submitted, setSubmitted] = useState(false); // Add a state variable for submission status
 
   const handleEmailChange = (event) => setEmail(event.target.value);
   const handleFileChange = (event) => setFile(event.target.files[0]);
   const handleConsentChange = (event) => setConsent(event.target.checked);
+  const handleInterestsChange = (event) => setInterests(event.target.value);
+  const handleBundleChange = (event) => setBundle(event.target.value);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (!file || !email) {
-      alert('Please enter your email and select a file to upload.');
+    if (!file || !email || !bundle) {
+      alert(
+        'Please enter your email, select a file to upload, and choose a bundle.'
+      );
       return;
     }
 
     // References to storage locations
     const fileRef = ref(storage, `cvs/${file.name}`);
-    const emailRef = ref(
+    const dataRef = ref(
       storage,
-      `emails/${email.replace(/[^a-zA-Z0-9]/g, '_')}.txt`
+      `data/${email.replace(/[^a-zA-Z0-9]/g, '_')}_data.txt`
     ); // Create a safe filename from email
 
     try {
@@ -34,28 +41,48 @@ function CVUploadForm() {
       const uploadFileResult = await uploadBytes(fileRef, file);
       console.log('File uploaded successfully', uploadFileResult);
 
-      // Convert email string to Blob and upload as .txt file
-      const emailBlob = new Blob([email], { type: 'text/plain' });
-      const uploadEmailResult = await uploadBytes(emailRef, emailBlob);
-      console.log('Email uploaded successfully', uploadEmailResult);
-      alert('Your CV and email have been submitted successfully!');
-      // Add the email and file reference to Firestore
+      // Create a text file with email, interests, and bundle
+      const dataContent = `Email: ${email}\nInterests: ${interests}\nBundle: ${bundle}`;
+      const dataBlob = new Blob([dataContent], { type: 'text/plain' });
+      const uploadDataResult = await uploadBytes(dataRef, dataBlob);
+      console.log('Data uploaded successfully', uploadDataResult);
+
+      // Add the email, file reference, and data reference to Firestore
       const docRef = await addDoc(collection(db, 'submissions'), {
         email,
         fileName: file.name,
         filePath: uploadFileResult.metadata.fullPath,
-        emailPath: uploadEmailResult.metadata.fullPath,
+        dataPath: uploadDataResult.metadata.fullPath,
       });
       console.log('Document written with ID: ', docRef.id);
 
       setEmail('');
       setFile(null);
-      alert('Your CV and email have been submitted successfully!');
+      setInterests('');
+      setBundle('');
+      setConsent(false);
+
+      setSubmitted(true); // Set the submission status to true
     } catch (error) {
       console.error('Error adding document: ', error);
-      alert('Error submitting your CV and email.');
+      alert('Error submitting your CV and data.');
     }
   };
+
+  if (submitted) {
+    // Conditionally render success message if submitted is true
+    return (
+      <div className="max-w-2xl mx-auto my-16 p-8 bg-background shadow-2xl rounded-lg border border-border transition-shadow duration-300 ease-in-out hover:shadow-3xl text-center">
+        <h2 className="text-3xl font-bold text-center text-primary mb-8">
+          Submission Successful!
+        </h2>
+        <p className="mb-6 text-tertiary text-center">
+          Thank you for submitting your CV. We will review your information and
+          get back to you soon.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -101,6 +128,44 @@ function CVUploadForm() {
             required
             className="w-full px-4 py-2 border border-tertiary rounded-md shadow-sm text-gray-900 cursor-pointer focus:outline-none focus:ring-primary focus:border-primary transition duration-300"
           />
+        </div>
+        <div>
+          <label
+            htmlFor="interests"
+            className="block text-sm font-medium text-secondary mb-2"
+          >
+            What subjects or topics from your academic studies are you most
+            interested in, and would like to further explore in your
+            professional career? (Please feel free to elaborate in your
+            response.)
+          </label>
+          <textarea
+            id="interests"
+            value={interests}
+            onChange={handleInterestsChange}
+            required
+            className="w-full px-4 py-2 border border-tertiary rounded-md shadow-sm placeholder-tertiary focus:outline-none focus:ring-primary focus:border-primary transition duration-300"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="bundle"
+            className="block text-sm font-medium text-secondary mb-2"
+          >
+            Choose a bundle
+          </label>
+          <select
+            id="bundle"
+            value={bundle}
+            onChange={handleBundleChange}
+            required
+            className="w-full px-4 py-2 border border-tertiary rounded-md shadow-sm placeholder-tertiary focus:outline-none focus:ring-primary focus:border-primary transition duration-300"
+          >
+            <option value="">Select a bundle</option>
+            <option value="1">Bundle 1</option>
+            <option value="2">Bundle 2</option>
+            <option value="3">Bundle 3</option>
+          </select>
         </div>
         <div>
           <input

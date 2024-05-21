@@ -141,7 +141,7 @@
     "title": "Scholarship Bundle Comparison",
     "items": [
       {
-        "name": "Bundle A (Entry-Level)",
+        "name": "Foundation Pathway",
         "financialSupport": "Tuition Discount",
         "commitmentPeriod": "1 year",
         "professionalOpportunities": ["Working Student Position"],
@@ -150,7 +150,7 @@
         "details": "This entry-level bundle is perfect for new students looking to gain initial support with minimal commitment. Ideal for those starting their academic journey."
       },
       {
-        "name": "Bundle B (Mid-Level)",
+        "name": "Enhancement Track",
         "financialSupport": "Full Tuition",
         "commitmentPeriod": "2 years",
         "professionalOpportunities": ["Internship", "Working Student Position"],
@@ -163,7 +163,7 @@
         "details": "Our mid-level bundle is designed for students who are ready to deepen their academic and professional experience with a moderate commitment."
       },
       {
-        "name": "Bundle C (High-Level)",
+        "name": "Pinnacle Program ",
         "financialSupport": "Full Tuition + Half Living",
         "commitmentPeriod": "3 years",
         "professionalOpportunities": ["Working Student Position"],
