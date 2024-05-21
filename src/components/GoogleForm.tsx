@@ -9,8 +9,8 @@ const FeedbackForm = () => {
       <div className="flex justify-center">
         <iframe
           src="https://forms.gle/mYYU3L15kbFqQo1x7"
-          width="640"
-          height="480"
+          className="w-full h-[80vh] border-0"
+          title="Feedback Form"
         >
           Loading…
         </iframe>
