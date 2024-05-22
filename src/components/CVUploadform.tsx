@@ -147,7 +147,7 @@ function CVUploadForm() {
             className="w-full px-4 py-2 border border-tertiary rounded-md shadow-sm placeholder-tertiary focus:outline-none focus:ring-primary focus:border-primary transition duration-300"
           />
         </div>
-        <div>
+        {/* <div>
           <label
             htmlFor="bundle"
             className="block text-sm font-medium text-secondary mb-2"
@@ -167,7 +167,7 @@ function CVUploadForm() {
             <option value="3">Pinnacle Program</option>
             <option value="4">Customized Bundle</option>
           </select>
-        </div>
+        </div> */}
         <div>
           <input
             type="checkbox"
