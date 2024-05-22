@@ -52,9 +52,8 @@ const App = () => {
         </>
       </LazyShow>
       <LazyShow>
-        <Pricing />
+        <GoogleForm />
       </LazyShow>
-      <GoogleForm />
       <CVUploadForm />
       <LazyShow>
         <>

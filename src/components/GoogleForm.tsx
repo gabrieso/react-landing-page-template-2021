@@ -4,7 +4,7 @@ const FeedbackForm = () => {
   return (
     <div className="mt-10 p-8 bg-gray-100 shadow-lg rounded-lg border border-gray-300">
       <h2 className="text-3xl font-bold text-center text-primary my-4">
-        Couldn&apos;t find a bundle that suits you? Let us know!
+        Tell us your needs!!
       </h2>
       <div className="flex justify-center">
         <iframe
