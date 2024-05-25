@@ -16,7 +16,7 @@ const About = () => {
         <div>
           <img src={logo} alt={companyName} className="w-16 h-16" />
         </div>
-        <div className="flex flex-wrap sm:gap-10 gap-8 items-center justify-center mt-4 h-12">
+        {/* <div className="flex flex-wrap sm:gap-10 gap-8 items-center justify-center mt-4 h-12">
           {sections.map((section, index) => (
             <a
               key={`${section.name}-${index}`}
@@ -26,7 +26,7 @@ const About = () => {
               {section.name}
             </a>
           ))}
-        </div>
+        </div> */}
         <div className="flex items-center gap-x-8 mt-6 h-8">
           <a
             aria-label="github"
@@ -78,6 +78,16 @@ const About = () => {
           </a>
         </div>
         <div className="flex items-center mt-6">
+          <img
+            src="https://sph.ethz.ch/uploads/images/ETH_SPH_Logo.svg"
+            alt="ETH Student Project House"
+            className="w-16 h-16"
+          />
+          <p className="mt-6 text-xs lg:text-sm leading-none text-gray-900 dark:text-gray-50">
+            Founded in the ETH Student Project House.
+          </p>
+        </div>
+        <div className="flex items-center mt-6">
           <p className="mt-6 text-xs lg:text-sm leading-none text-gray-900 dark:text-gray-50">
             &copy; {new Date().getFullYear()} designed by{' '}
             <a href="https://github.com/issaafalkattan" rel="nofollow">
@@ -89,4 +99,5 @@ const About = () => {
     </div>
   );
 };
+
 export default About;

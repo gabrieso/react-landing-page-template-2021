@@ -9,6 +9,16 @@ const MainHero = () => {
   return (
     <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
       <div className="sm:text-center lg:text-left">
+        <div className="flex justify-center lg:justify-start mb-8">
+          <span className="text-lg font-semibold mr-3">
+            A project launched in:
+          </span>
+          <img
+            src={'https://sph.ethz.ch/uploads/images/ETH_SPH_Logo.svg'}
+            alt="ETH SPH Logo"
+            className="w-32 h-auto lg:w-40"
+          />
+        </div>
         <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
           <span className="block xl:inline">{mainHero.title}</span>{' '}
           <span className={`block text-primary xl:inline`}>

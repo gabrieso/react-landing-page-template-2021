@@ -2,6 +2,7 @@ import React from 'react';
 
 import ReactGA from 'react-ga4';
 
+import About from '../components/About';
 import Analytics from '../components/Analytics';
 import Canvas from '../components/Canvas';
 import CVUploadForm from '../components/CVUploadform';
@@ -54,7 +55,6 @@ const App = () => {
       <LazyShow>
         <GoogleForm />
       </LazyShow>
-      <CVUploadForm />
       <LazyShow>
         <>
           <Canvas />
